@@ -1,0 +1,68 @@
+env:
+  # TERM variable
+  #
+  # This value is used to set the `$TERM` environment variable for
+  # each instance of Alacritty. If it is not present, alacritty will
+  # check the local terminfo database and use `alacritty` if it is
+  # available, otherwise `xterm-256color` is used.
+  TERM: xterm-256color
+# COLOR SCHEMES
+schemes:
+
+  doom-one: &custom
+    primary:
+      background: '#202027'
+      foreground: '#dfdfdf'
+    cursor:
+      text: CellBackground
+      cursor: '#dfdfdf'
+    selection:
+      text: CellForeground
+      background: '#dfdfdf'
+    normal:
+      black:   '#202027'
+      red:     '#d42524'
+      green:   '#f56b4b'
+      yellow:  '#ffa764'
+      blue:    '#ea3853'
+      magenta: '#851380'
+      cyan:    '#358beb'
+      white:   '#dfdfdf'
+    bright:
+      black:   '#2e2e35'
+      red:     '#e45050'
+      green:   '#f28c5c'
+      yellow:  '#ffb862'
+      blue:    '#ff638c'  
+      magenta: '#b538b0'
+      cyan:    '#45aacc'
+      white:   '#ffffff'
+
+colors: *custom
+
+# Font configuration (changes require restart)
+font:
+  # Normal (roman) font face
+  normal:
+    family: Hack Nerd Font Mono
+    style: Regular
+
+  # Bold font face
+  bold:
+    family: Hack Nerd Font Mono
+    style: Bold
+
+  # Italic font face
+  italic:
+    family: Hack Nerd Font Mono
+    style: Italic
+
+  # Bold italic font face
+  bold_italic:
+    family: Hack Nerd Font Mono
+    style: Bold Italic
+
+  # Point size
+  size: 11.0
+
+background_opacity: 0.7
