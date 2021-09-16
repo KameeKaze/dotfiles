@@ -157,3 +157,4 @@ gaps inner 10
 
 # make terminal transparent
 exec_always --no-startup-id "killall -q /usr/bin/picom; /usr/bin/picom --xrender-sync-fence --config ~/.config/picom/picom.conf -b"
+bindsym --release Print exec "scrot -s /tmp/screenshot-$(date +%F_%T).png -e 'xclip -selection c -t image/png < $f'"
