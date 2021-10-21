@@ -103,8 +103,7 @@ bindsym $mod+Shift+5 move container to workspace number $ws5
 bindsym $mod+Shift+6 move container to workspace number $ws6
 bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
-bindsym $mod+Shift+9 move container to workspace number $ws9
-bindsym $mod+Shift+0 move container to workspace number $ws10
+
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -158,3 +157,7 @@ gaps inner 10
 # make terminal transparent
 exec_always --no-startup-id "killall -q /usr/bin/picom; /usr/bin/picom --xrender-sync-fence --config ~/.config/picom/picom.conf -b"
 bindsym --release Print exec "scrot -s /tmp/screenshot-$(date +%F_%T).png -e 'xclip -selection c -t image/png < $f'"
+
+# move between workspaces with arrows
+bindsym $mod+Control+Right workspace next
+bindsym $mod+Control+Left workspace prev
