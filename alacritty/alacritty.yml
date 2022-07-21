@@ -21,21 +21,21 @@ schemes:
       background: '#dfdfdf'
     normal:
       black:   '#202027'
-      red:     '#d42524'
-      green:   '#f56b4b'
-      yellow:  '#ffa764'
-      blue:    '#ea3853'
-      magenta: '#851380'
-      cyan:    '#358beb'
+      red:     '#f0304d'
+      green:   '#2dd38d'
+      yellow:  '#f7b84f'
+      blue:    '#356beb'
+      magenta: '#9750ce'
+      cyan:    '#32b8c0'
       white:   '#dfdfdf'
     bright:
       black:   '#2e2e35'
-      red:     '#e45050'
-      green:   '#f28c5c'
-      yellow:  '#ffb862'
-      blue:    '#ff638c'  
-      magenta: '#b538b0'
-      cyan:    '#45aacc'
+      red:     '#fa5c6c'
+      green:   '#6aee95'
+      yellow:  '#fad075'
+      blue:    '#4995e2'  
+      magenta: '#b26ce6'
+      cyan:    '#60dbe2'
       white:   '#ffffff'
 
 colors: *custom
@@ -65,4 +65,5 @@ font:
   # Point size
   size: 11.0
 
-window.opacity: 0.7
+window:
+   opacity: 0.9
