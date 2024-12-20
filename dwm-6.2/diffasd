@@ -1,0 +1,67 @@
+62c62
+< enum { SchemeNorm, SchemeSel }; /* color schemes */
+---
+> enum { SchemeNorm, SchemeSel, Bat0,Bat1,Bat2,Bat3,Bat4,Purp,Blue,Pink }; /* color schemes */
+121a122
+> 	int gappx;
+573a575
+> 
+643a646
+> 	m->gappx = gappx;
+704a708,711
+> 	char *ts = stext;
+> 	char *tp = stext;
+> 	char ctmp;
+> 
+714c721,730
+< 		drw_text(drw, m->ww - tw, 0, tw, bh, 0, stext, 0);
+---
+> 		while (1) {
+> 			if ((unsigned int)*ts > LENGTH(colors)) { ts++; continue ; }
+> 			ctmp = *ts;
+> 			*ts = '\0';
+> 			drw_text(drw, m->ww - sw, 0, sw, bh, 0, stext, 0);
+> 			if (ctmp == '\0') { break; }
+> 			drw_setscheme(drw, scheme[(unsigned int)(ctmp-1)]);
+> 			*ts = ctmp;
+> 			tp = ++ts;
+> 		}
+1509a1526,1527
+> 
+> 
+1700,1706c1718,1724
+< 		mw = m->ww;
+< 	for (i = my = ty = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), i++)
+< 		if (i < m->nmaster) {
+< 			h = (m->wh - my) / (MIN(n, m->nmaster) - i);
+< 			resize(c, m->wx, m->wy + my, mw - (2*c->bw), h - (2*c->bw), 0);
+< 			if (my + HEIGHT(c) < m->wh)
+< 				my += HEIGHT(c);
+---
+> 		mw = m->ww - m->gappx;
+> 	for (i = 0, my = ty = m->gappx, c = nexttiled(m->clients); c; c = nexttiled(c->next), i++)
+> 			if (i < m->nmaster) {
+> 			h = (m->wh - my) / (MIN(n, m->nmaster) - i) - m->gappx;
+> 			resize(c, m->wx + m->gappx, m->wy + my, mw - (2*c->bw) - m->gappx, h - (2*c->bw), 0);
+> 			if (my + HEIGHT(c) + m->gappx < m->wh)
+> 				my += HEIGHT(c) + m->gappx;
+1708,1711c1726,1730
+< 			h = (m->wh - ty) / (n - i);
+< 			resize(c, m->wx + mw, m->wy + ty, m->ww - mw - (2*c->bw), h - (2*c->bw), 0);
+< 			if (ty + HEIGHT(c) < m->wh)
+< 				ty += HEIGHT(c);
+---
+> 			h = (m->wh - ty) / (n - i) - m->gappx;
+> 			resize(c, m->wx + mw + m->gappx, m->wy + ty, m->ww - mw - (2*c->bw) - 2*m->gappx, h - (2*c->bw), 0);
+> 			if (ty + HEIGHT(c) + m->gappx < m->wh)
+> 				ty += HEIGHT(c) + m->gappx;
+> 
+1849c1868
+< 	} else
+---
+>  	} else
+2165c2184
+< }
+\ No newline at end of file
+---
+> }

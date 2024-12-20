@@ -3,23 +3,37 @@
 
 /* appearance */
 
-static const unsigned int borderpx  = 4;        /* border pixel of windows */
-static const unsigned int gappx     = 12;        /* gaps between windows */
+static const unsigned int borderpx  = 3;        /* border pixel of windows */
+static const unsigned int gappx     = 14;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
+
 static const char *fonts[]          = { "nerdfont:size=12" };
-static const char dmenufont[]       = "nerdfont:size=10";
+static const char dmenufont[]       = "nerdfont:size=12";
 static const char col_gray1[]       = "#222222";
-static const char col_gray2[]       = "#444444";
+static const char col_gray2[]       = "#dfdfdf";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#32b8c0";
+static const char col_cyan[]        = "#009cc7";
 static const char col_purple[]      = "#9750ce";
-static const char *colors[][3]      = {
+static const char *colors[][8]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
+	[SchemeNorm] = { col_gray3, col_gray1,   col_gray2 },
 	[SchemeSel]  = { col_gray4, col_purple,  col_cyan  },
+
+	/*
+	[Bat0]  = { "#a6e8a5", col_gray1,  col_cyan  },
+	[Bat1]  = { "#d6ffa5", col_gray1,  col_cyan  },
+	[Bat2]  = { "#ffffa5", col_gray1,  col_cyan  },
+	[Bat3]  = { "#f8cda6", col_gray1,  col_cyan  },
+	[Bat4]  = { "#f78272", col_gray1,  col_cyan  },
+	[Purp]  = { "#b067e8", col_gray1,  col_cyan  },
+	[Blue]  = { "#6ca4ed", col_gray1,  col_cyan  },
+	[Pink]  = { "#f0449f", col_gray1,  col_cyan  },
+
+*/
+
 };
 
 /* tagging */
@@ -65,7 +79,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_purple, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
-static const char *slock[] = { "slock", NULL };
+static const char *slock[] = { "i3lock", "-i", "/home/kamee/dotfiles/lockscreen.png", NULL };
 static const char *volumeup[]    = { "amixer", "set", "Master", "2%+", NULL };
 static const char *volumedown[]  = { "amixer", "set", "Master", "2%-", NULL };
 static const char *mutevol[]     = { "amixer", "set", "Master", "toggle", NULL };
@@ -81,8 +95,8 @@ static Key keys[] = {
 	{ 0,                            XF86XK_AudioMute,         spawn,  {.v = mutevol } },
 	{ 0,                            XF86XK_MonBrightnessUp,   spawn,  {.v = brightnessup } },
 	{ 0,                            XF86XK_MonBrightnessDown, spawn,  {.v = brightnessdown } },
-	{ MODKEY,                       PrintScreen, spawn,        SHCMD("maim -m 10 | tee ~/screenshots/screenshot_$(date '+%Y%m%d_%H%M%S').png | xclip -selection clipboard -t image/png") },
-	{ 0,                            PrintScreen, spawn,        SHCMD("maim  -m 10 -s | tee ~/screenshots/screenshot_$(date '+%Y%m%d_%H%M%S').png | xclip -selection clipboard -t image/png") },
+	{ MODKEY,                       PrintScreen, spawn,        SHCMD("maim -m 10 | tee ~/screenshots/screenshot_$(date '+%Y%m-%d_%H:%M:%S').png | xclip -selection clipboard -t image/png") },
+	{ 0,                            PrintScreen, spawn,        SHCMD("maim  -m 10 -s | tee ~/screenshots/screenshot_$(date '+%Y-%m-%d_%H:%M:%S').png | xclip -selection clipboard -t image/png") },
 	{ MODKEY|ShiftMask,             XK_x,      quit,      	   {0} },
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_x,      spawn,          {.v = slock } },
