@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# What modules, in what order
+MODULES="wifi ethernet localip ram cpu battery datetime"
+
+# Delay between showing the status bar
+DELAY="0.05"
+
+# Where the custom modules are stored
+CUSTOM_DIR="~/.config/dwmbar/custom/"
+
+# Separator between modules
+SEPARATOR=" | "
+
+# Padding at the end and beginning of the status bar
+RIGHT_PADDING=""
+LEFT_PADDING=" "

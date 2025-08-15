@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Prints out the time
+
+PREFIX=''
+
+get_time()
+{
+    echo "$PREFIX $(date '+%B %d (%a)  %H:%M')"
+}
+
+get_time

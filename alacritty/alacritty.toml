@@ -1,0 +1,56 @@
+[colors.bright]
+black = "#2e2e35"
+blue = "#4995e2"
+cyan = "#60dbe2"
+green = "#6aee95"
+magenta = "#b26ce6"
+red = "#fa5c6c"
+white = "#ffffff"
+yellow = "#fad075"
+
+[colors.cursor]
+cursor = "#dfdfdf"
+text = "CellBackground"
+
+[colors.normal]
+black = "#202027"
+blue = "#356beb"
+cyan = "#32b8c0"
+green = "#2dd38d"
+magenta = "#9750ce"
+red = "#f0304d"
+white = "#dfdfdf"
+yellow = "#f7b84f"
+
+[colors.primary]
+background = "#202027"
+foreground = "#dfdfdf"
+
+[colors.selection]
+background = "#dfdfdf"
+text = "CellForeground"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 11.0
+
+[font.normal]
+family = "Hack Nerd Font Mono"
+style = "Regular"
+
+[font.bold]
+family = "Hack Nerd Font Mono"
+style = "Bold"
+
+[font.italic]
+family = "Hack Nerd Font Mono"
+style = "Italic"
+
+[font.bold_italic]
+family = "Hack Nerd Font Mono"
+style = "Bold Italic"
+
+[window]
+opacity = 0.8

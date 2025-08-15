@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Prints out your local IP
+
+PREFIX=' '
+
+get_local_ip()
+{
+	IP=$(ip addr | grep -e "inet " | awk 'NR==2' | sed 's/^.*inet.//g; s/\/.*//g')
+
+	echo "  $IP"
+}
+
+get_local_ip

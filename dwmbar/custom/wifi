@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Gets the wifi status
+
+get_wifi() {
+    interface=$(iw dev | awk '$1=="Interface"{print $2}' | head -n1)
+    if [ -n "$interface" ]; then
+        ssid=$(iwgetid -r)
+        if [ -n "$ssid" ]; then
+            echo "  $ssid"
+        fi
+    fi
+}
+
+get_wifi
