@@ -1,0 +1,233 @@
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: Hack Nerd Font, NotoColorEmoji;
+    font-size: 12px;
+    padding: 0;
+    margin: 0;
+
+}
+
+
+
+window#waybar {
+    background: rgba(255, 255, 255, 0);
+}
+
+button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0 -3px transparent;
+    /* Avoid rounded borders under each button name */
+    border: none;
+    border-radius: 0;
+}
+
+
+
+/* -----------------------------------------------------------------------------
+* Workspaces
+* -------------------------------------------------------------------------- */
+
+
+
+#workspaces button {
+	background: #202027;
+	color: #bd97ff;
+	margin: 6px 2px 6px 2px;
+	padding: 2px 8px;
+	border-radius: 10px;
+	font-weight: bold;
+	border: 2px solid ;
+	border-color: #bd97ff;
+
+}
+
+
+#workspaces button:hover {
+	background: #4d3675;;
+	color: #ffffff;;
+	border-color: #ffffff;;
+
+}
+
+#workspaces button.active.empty{
+	background: #9D65FF;
+	color: #ffffff;
+	border-color: #ffffff;
+	opacity: 1;
+}
+
+
+#workspaces button.active,
+#workspaces button.focused {
+	background: #9D65FF;
+	color: #ffffff;
+	border-color: #ffffff;
+
+}
+
+
+#workspaces button.empty {
+	opacity: 0.25;
+	background: #202720;
+	color: #ffffff;
+	border-color: #ffffff;
+
+}
+
+
+#workspaces button.empty:hover {
+	opacity: 0.5;
+	background: #4d3675;;
+	color: #ffffff;;
+	border-color: #ffffff;;
+
+}
+
+#workspaces button.urgent {
+	background: #f0304d;
+	color: #ffffff;
+	border-color: #000000;
+}
+
+
+
+/* -----------------------------------------------------------------------------
+* Clock
+* -------------------------------------------------------------------------- */
+
+#clock {
+	background: #202027;
+	color: #ffffff;
+	font-weight: bold;
+
+	margin: 6px 2px;
+	padding: 8px 12px;
+	border-radius: 12px;
+
+	font-weight: bold;
+	border: 2px solid ;
+	border-color: #5179fd;
+	
+}
+
+/* -----------------------------------------------------------------------------
+* Network
+* -------------------------------------------------------------------------- */
+
+#network {
+	background: #202027;
+	color: #ffffff;
+	border-left: 4px solid #37b837;
+	margin: 6px 0 6px 2px;
+	padding: 8px 12px;
+	border-radius: 12px;
+	
+}
+
+#network.disconnected {
+	color: #e46876;
+	border-left: 4px solid #e46876;
+}
+
+#network.disabled {
+	color: #a89984;
+	border-left: 4px solid #a89984;
+}
+
+
+
+/* -----------------------------------------------------------------------------
+* Bluetooth
+* -------------------------------------------------------------------------- */
+
+#bluetooth {
+	background: #202027;
+	color: #ffffff;
+	border-left: 4px solid #0082FC;
+	margin: 6px 0 6px 2px;
+	padding: 8px 12px;
+	border-radius: 12px;
+}
+
+/* -----------------------------------------------------------------------------
+* Memory
+* -------------------------------------------------------------------------- */
+
+#memory {
+	background: #202027;
+	color: #ffffff;
+	border-left: 4px solid #fff130;
+	margin: 6px 0 6px 2px;
+	padding: 8px 12px;
+	border-radius: 12px;
+}
+
+/* -----------------------------------------------------------------------------
+* CPU
+* -------------------------------------------------------------------------- */
+
+#cpu {
+	background: #272320;
+	color: #ffffff;
+	border-left: 4px solid #ff9430;
+	margin: 6px 0 6px 2px;
+	padding: 8px 12px;
+	border-radius: 12px;
+}
+
+/* -----------------------------------------------------------------------------
+* Temperature
+* -------------------------------------------------------------------------- */
+
+#temperature {
+	background: #202027;
+	color: #abcdfe;
+	border-left: 4px solid #abcdfe;
+	margin: 6px 0 6px 2px;
+	padding: 8px 12px;
+	border-radius: 12px;
+}
+
+
+
+/* -----------------------------------------------------------------------------
+* Battery
+* -------------------------------------------------------------------------- */
+
+#battery {
+	background: #202027;
+	color: #ffffff;
+	border-left: 4px solid #97f54a;
+	margin: 6px 0 6px 2px;
+	padding: 8px 12px;
+	border-radius: 12px;
+}
+
+/* -----------------------------------------------------------------------------
+* Language
+* -------------------------------------------------------------------------- */
+
+#language {
+	background: #202027;
+	color: #ffffff;
+	border-left: 4px solid #b61472;
+	margin: 6px 0 6px 2px;
+	padding: 8px 12px;
+	border-radius: 12px;
+}
+
+
+
+/* -----------------------------------------------------------------------------
+* Tray
+* -------------------------------------------------------------------------- */
+
+#tray {
+	background: #202027;
+	color: #ffffff;
+	border-left: 4px solid #44fae8;
+	margin: 6px 0 6px 2px;
+	padding: 8px 12px;
+	border-radius: 12px;
+	
+}
